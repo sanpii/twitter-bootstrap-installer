@@ -1,0 +1,20 @@
+{
+    "name": "sanpi/twitter-bootstrap-installer",
+    "description": "Composer post-install helper for Twitter bootstrap",
+    "keywords": ["installer", "twitter-bootstrap"],
+    "license": "MIT",
+    "require": {
+        "twitter/bootstrap": "2.2.*",
+        "leafo/lessphp": "0.3.*"
+    },
+    "scripts": {
+        "post-install-cmd": "Sanpi\\TwitterBootstrap\\Composer\\ScriptHandler::postInstall",
+        "post-update-cmd": "Sanpi\\TwitterBootstrap\\Composer\\ScriptHandler::postUpdate"
+    },
+    "autoload": {
+        "psr-0": { "": "src/" }
+    },
+    "extra": {
+        "symfony-web-dir": "web"
+    }
+}

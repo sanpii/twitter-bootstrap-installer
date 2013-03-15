@@ -4,7 +4,6 @@
 
 In your composer project:
 
-    $ composer require 'twitter/bootstrap 2.2.*'
     $ composer require 'sanpi/twitter-bootstrap-installer *@dev'
 
 And append this configuration in `composer.json`:
@@ -16,7 +15,3 @@ And append this configuration in `composer.json`:
     "extra": {
         "symfony-web-dir": "web"
     }
-
-## Note
-
-https://github.com/meenie/munee/issues/1

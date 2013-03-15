@@ -18,6 +18,8 @@ class ScriptHandler
 
     static private function installBootstrap(CommandEvent $event)
     {
+        $event->getIO()->write('<info>Generating bootstrap assets</info>');
+
         $options = self::getOptions($event);
         $webDir = $options['symfony-web-dir'];
 

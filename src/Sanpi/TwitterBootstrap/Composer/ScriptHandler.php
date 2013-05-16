@@ -40,6 +40,9 @@ class ScriptHandler
         $css = $lessc->compileFile("$bootstrapDir/less/bootstrap.less");
         file_put_contents("$webDir/css/bootstrap.css", $css);
 
+        $css = $lessc->compileFile("$bootstrapDir/less/responsive.less");
+        file_put_contents("$webDir/css/bootstrap-responsive.css", $css);
+
         foreach (glob("$bootstrapDir/js/*.js") as $src) {
             $dst = "$webDir/js/" . basename($src);
             copy($src, $dst);

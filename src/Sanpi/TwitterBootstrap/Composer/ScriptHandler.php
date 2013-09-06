@@ -42,9 +42,9 @@ class ScriptHandler
             file_put_contents("$webDir/css/bootstrap-responsive.css", $css->getCss());
         }
 
-        self::createDirectory("$webDir/js");
+        self::createDirectory("$webDir/js/bootstrap");
         foreach (glob("$bootstrapDir/js/*.js") as $src) {
-            $dst = "$webDir/js/" . basename($src);
+            $dst = "$webDir/js/bootstrap/" . basename($src);
             copy($src, $dst);
         }
 
@@ -68,7 +68,7 @@ class ScriptHandler
     static private function createDirectory($name)
     {
         if (!is_dir($name)) {
-            mkdir($name);
+            mkdir($name, 0755, true);
         }
     }
 

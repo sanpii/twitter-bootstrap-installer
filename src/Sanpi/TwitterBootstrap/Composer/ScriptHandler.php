@@ -32,8 +32,6 @@ class ScriptHandler
         $bootstrapDir = "vendor/twitter/bootstrap";
 
         self::createDirectory("$webDir/css");
-        self::createDirectory("$webDir/js");
-        self::createDirectory("$webDir/img");
 
         $lessc = new \Less_Parser();
         $css = $lessc->parseFile("$bootstrapDir/less/bootstrap.less");
@@ -44,14 +42,26 @@ class ScriptHandler
             file_put_contents("$webDir/css/bootstrap-responsive.css", $css->getCss());
         }
 
+        self::createDirectory("$webDir/js");
         foreach (glob("$bootstrapDir/js/*.js") as $src) {
             $dst = "$webDir/js/" . basename($src);
             copy($src, $dst);
         }
 
-        foreach (glob("$bootstrapDir/img/*.png") as $src) {
-            $dst = "$webDir/img/" . basename($src);
-            copy($src, $dst);
+        if (is_dir("$bootstrapDir/img")) {
+            self::createDirectory("$webDir/img");
+            foreach (glob("$bootstrapDir/img/*.png") as $src) {
+                $dst = "$webDir/img/" . basename($src);
+                copy($src, $dst);
+            }
+        }
+
+        if (is_dir("$bootstrapDir/fonts/")) {
+            self::createDirectory("$webDir/fonts");
+            foreach (glob("$bootstrapDir/fonts/*") as $src) {
+                $dst = "$webDir/fonts/" . basename($src);
+                copy($src, $dst);
+            }
         }
     }
 

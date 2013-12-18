@@ -4,7 +4,7 @@
     "keywords": ["installer", "twitter-bootstrap"],
     "license": "MIT",
     "require": {
-        "twitter/bootstrap": "*",
+        "twitter/bootstrap": "<=3.0.0",
         "leafo/lessphp": "*"
     },
     "scripts": {

@@ -5,7 +5,7 @@
     "license": "MIT",
     "require": {
         "twitter/bootstrap": "<=3.0.0",
-        "leafo/lessphp": "*"
+        "leafo/lessphp": "~0.4"
     },
     "scripts": {
         "post-install-cmd": "Sanpi\\TwitterBootstrap\\Composer\\ScriptHandler::postInstall",

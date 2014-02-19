@@ -6,7 +6,7 @@
 
 In your composer project:
 
-    $ composer require 'sanpi/twitter-bootstrap-installer *@dev'
+    $ composer require sanpi/twitter-bootstrap-installer
 
 And append this configuration in `composer.json`:
 

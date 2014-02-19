@@ -35,13 +35,12 @@ class ScriptHandler
         self::createDirectory("$webDir/js");
         self::createDirectory("$webDir/img");
 
-        require 'vendor/leafo/lessphp/lessc.inc.php';
-        $lessc = new \lessc();
-        $css = $lessc->compileFile("$bootstrapDir/less/bootstrap.less");
+        $lessc = new \Less_Parser();
+        $css = $lessc->parseFile("$bootstrapDir/less/bootstrap.less");
         file_put_contents("$webDir/css/bootstrap.css", $css);
 
         if (is_file("$bootstrapDir/less/responsive.less")) {
-            $css = $lessc->compileFile("$bootstrapDir/less/responsive.less");
+            $css = $lessc->parseFile("$bootstrapDir/less/responsive.less");
             file_put_contents("$webDir/css/bootstrap-responsive.css", $css);
         }
 

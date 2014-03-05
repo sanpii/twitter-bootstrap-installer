@@ -37,11 +37,11 @@ class ScriptHandler
 
         $lessc = new \Less_Parser();
         $css = $lessc->parseFile("$bootstrapDir/less/bootstrap.less");
-        file_put_contents("$webDir/css/bootstrap.css", $css);
+        file_put_contents("$webDir/css/bootstrap.css", $css->getCss());
 
         if (is_file("$bootstrapDir/less/responsive.less")) {
             $css = $lessc->parseFile("$bootstrapDir/less/responsive.less");
-            file_put_contents("$webDir/css/bootstrap-responsive.css", $css);
+            file_put_contents("$webDir/css/bootstrap-responsive.css", $css->getCss());
         }
 
         foreach (glob("$bootstrapDir/js/*.js") as $src) {

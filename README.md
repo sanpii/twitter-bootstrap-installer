@@ -1,6 +1,6 @@
 # Twitter bootstrap installer
 
-[![Build Status](http://ci.homecomputing.fr/twitter-bootstrap-installer/build/status)](http://ci.homecomputing.fr/twitter-bootstrap-installer)
+[![Build Status](https://travis-ci.org/sanpii/twitter-bootstrap-installer.svg?branch=master)](https://travis-ci.org/sanpii/twitter-bootstrap-installer)
 
 ## Installation
 

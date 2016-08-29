@@ -1,0 +1,17 @@
+language: php
+
+sudo: false
+
+php: 7.0
+
+cache:
+    directories:
+        - $HOME/.composer/cache
+
+before_script:
+    - composer install
+    - test -d web || mkdir web
+
+script:
+    - composer install --dev
+    - test -s web/css/bootstrap.css
